@@ -8,7 +8,7 @@
       <field name="arch" type="xml">
         <xpath expr="//group[@name='social_media']" position="after">
           <group>
-              <!--<field name="token_slack" />-->
+              <field name="token_slack" />
           </group>
         </xpath>
         
@@ -22,7 +22,7 @@
       <field name="inherit_id" ref="sales_team.crm_team_view_form"/>
       <field name="arch" type="xml">
         <xpath expr="//group[@name='right']" position="inside">
-          <!--<field name="canal_slack" />-->
+          <field name="canal_slack" />
         </xpath>
 
         
