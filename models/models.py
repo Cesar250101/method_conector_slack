@@ -2,7 +2,7 @@
 
 from odoo import models, fields, api
 import slack
-
+import locale
 
 class ModuleName(models.Model):
     _inherit = 'res.company'
@@ -23,7 +23,9 @@ class SaleOrder(models.Model):
     def action_confirm(self):
         MntNeto = self.company_id.currency_id._convert(self.amount_total, self.currency_id, self.company_id, self.date_order)        
         mensaje="Felicitaciones a "+ self.user_id.name +" por el cierre del negocio para el cliente "+ self.partner_id.name
-        mensaje+=" por un valor de "+str(MntNeto)
+        mensaje+=" por un valor de "+str(locale.format('%d', MntNeto, 1))
+        
+        
         
         
         
